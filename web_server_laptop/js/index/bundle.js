@@ -32,7 +32,7 @@ class Speed extends TelemetryData {
     }
 
     init () {
-        this.initData(this.document, this.numSensors);
+        this.initData(this.document, this.numSensors);       
         this.buildSensorElements(this.prefix);
     }
 
