@@ -43,7 +43,6 @@ function serve(port, base, webServiceController) {
 
 module.exports = serve;
 
-/******************************** Routes *******************************/
 const INDEX_PAGE = '/';
 const MODEL_PAGE = '/home/model';
 
@@ -53,18 +52,14 @@ function setupRoutes(app) {
 
   app.get(INDEX_PAGE, redirectHome(app));
 
-  // BASE = 'home/'
   app.get(BASE, toHomePage(app));
   app.get(MODEL_PAGE, toModelPage(app));
 
-
-  // web service routes
   app.get(`/temp/:sensorId`, getTemp(app));
 
-  app.use(doErrors()); //must be last - setup for server errors
+  app.use(doErrors());
 }
 
-/*************************** Action Routines ***************************/
 function redirectHome(app) {
   return errorWrap(async function(req, res) {
     try {
@@ -106,9 +101,6 @@ function getTemp(app) {
       const sensorId = req.params.sensorId;
       const sensorValue = await app.locals.webServiceController.getTemp(sensorId);
 
-      //const model = { base: app.locals.base, name: name, content: contentData };
-      //const html = doMustache(app, 'docUploaded', model);
-
       res.send(`${sensorValue}`);
     }
     catch (err) {
@@ -118,11 +110,6 @@ function getTemp(app) {
   });
 }
 
-//action routines for routes + any auxiliary functions.
-
-/************************ General Utilities ****************************/
-
-// generate html string to green text search term
 function generateCustomHTML(lines, terms) {
   let termArray = terms.split(" ");
   let retArray = [];
@@ -140,7 +127,6 @@ function getHTMLString(term) {
   return `<span class=\"search-term\"> ${term} </span>`
 }
 
-/** return object containing all non-empty values from object values */
 function getNonEmptyValues(values) {
   const out = {};
   Object.keys(values).forEach(function(k) {
@@ -150,13 +136,6 @@ function getNonEmptyValues(values) {
   return out;
 }
 
-/** Return a URL relative to req.originalUrl.  Returned URL path
- *  determined by path (which is absolute if starting with /). For
- *  example, specifying path as ../search.html will return a URL which
- *  is a sibling of the current document.  Object queryParams are
- *  encoded into the result's query-string and hash is set up as a
- *  fragment identifier for the result.
- */
 function relativeUrl(req, path='', queryParams={}, hash='') {
   const url = new URL('http://dummy.com');
   url.protocol = req.protocol;
