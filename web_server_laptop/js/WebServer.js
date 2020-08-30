@@ -72,7 +72,7 @@ function setupRoutes(app) {
   app.get(`/dist/:sensorId`, getDist(app));
   app.get(`/speed/:sensorId`, getSpeed(app));
 
-  app.use(doErrors()); //must be last - setup for server errors
+  app.use(doErrors()); 
 }
 
 function redirectHome(app) {
