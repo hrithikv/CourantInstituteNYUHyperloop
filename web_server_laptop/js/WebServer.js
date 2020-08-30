@@ -280,7 +280,6 @@ function getError (err) {
 function doErrors(app) {
   return async function(err, req, res, next) {
 
-    // catch JSON syntax error
     if (err instanceof SyntaxError) {
       const error = {error: "Invalid JSON", tips: "Check if body has correct JSON syntax" }
       res.statusCode = BAD_REQUEST;
