@@ -9,7 +9,7 @@ class Distance extends TelemetryData {
     }
 
     init () {
-        this.initChart(this.context, this.numSensors, this.numPreviousTimes);
+        this.initChart(this.context, this.numSensors, this.numPreviousTimes);            
     }
 
     sendRequests (path) {
