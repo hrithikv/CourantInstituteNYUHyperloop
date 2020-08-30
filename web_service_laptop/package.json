@@ -1,0 +1,16 @@
+{
+  "name": "hyperloop_hrithikv6",
+  "version": "1.0.0",
+  "description": "express web server to communicate between pod and laptop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hrithik vemparala",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongodb": "^3.2.3"
+  }
+}
