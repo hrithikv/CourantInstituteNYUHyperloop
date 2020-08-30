@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GNC Hub</title>
+    <link rel="icon" href="https://www.logolynx.com/images/logolynx/3f/3f4b21cb4c608e21f3bf4fbad4b902ed.png" type="image/png">
+
+    <link type="text/css" rel="stylesheet" href="statics/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <header>
+      <div class="logoheader">
+        <img class="logo" src="statics/image/logo.png" alt="" width="300" height="100">
+        <h1> GNC Hub </h1>
+      </div>
+
+    </header>
+
+    <div id="errorDiv">
+      <h2 id="errorTitle">Error</h2>
+      <h3>Sensor(s) connection lost or delayed</h3>
+      <h3 id="sensorNames"></h3>
+    </div>
+
+    <div class="buttonsWrapper">
+      <div class="refreshTimeC">
+          <span id="refreshTitle">Refresh Time (ms)
+            <input id="timeInput" type="number" value="2000">
+          </span>
+      </div>
+
+      <div>
+        <button class="buttons" id="startButton">Start</button>
+        <div class="divider"></div>
+        <button class="buttons" id="stopButton">Stop</button>
+      </div>
+
+      <div class="options">
+          <a id="modelLink" class="optionsButton" >Model Page</a>
+      </div>
+
+    </div>
+
+    <h2 class="headerSensor" id="tempHeader">Temperature</h2>
+    <div class="sensors">
+      <div>
+        <div class="title">Sensor 1</div>
+        <div class="sensor" id="tempSensor1">0</div> <span class="unit">&deg;f</span>
+      </div>
+      <div>
+        <div class="title">Sensor 2</div>
+        <div class="sensor" id="tempSensor2">0</div> <span class="unit">&deg;f</span>
+      </div>
+      <div>
+        <div class="title">Sensor 3</div>
+        <div class="sensor" id="tempSensor3">0</div> <span class="unit">&deg;f</span>
+      </div>
+      <div>
+        <div class="title">Sensor 4</div>
+        <div class="sensor" id="tempSensor4">0</div> <span class="unit">&deg;f</span>
+      </div>
+    </div>
+
+    <h2 class="headerSensor" id="distHeader">Distance</h2>
+    <div class="sensors">
+      <div>
+        <div class="title">Sensor 1</div>
+        <div class="sensor" id="distSensor1">0</div> <span class="unit">ft</span>
+      </div>
+      <div>
+        <div class="title">Sensor 2</div>
+        <div class="sensor" id="distSensor2">0</div> <span class="unit">ft</span>
+      </div>
+      <div>
+        <div class="title">Sensor 3</div>
+        <div class="sensor" id="distSensor3">0</div> <span class="unit">ft</span>
+      </div>
+      <div>
+        <div class="title">Sensor 4</div>
+        <div class="sensor" id="distSensor4">0</div> <span class="unit">ft</span>
+      </div>
+    </div>
+
+    <h2 class="headerSensor" id="speedHeader">Speed</h2>
+    <div class="sensors">
+      <div>
+        <div class="title">Sensor 1</div>
+        <div class="sensor" id="speedSensor1">0</div> <span class="unit">mph</span>
+      </div>
+      <div>
+        <div class="title">Sensor 2</div>
+        <div class="sensor" id="speedSensor2">0</div> <span class="unit">mph</span>
+      </div>
+      <div>
+        <div class="title">Sensor 3</div>
+        <div class="sensor" id="speedSensor3">0</div> <span class="unit">mph</span>
+      </div>
+      <div>
+        <div class="title">Sensor 4</div>
+        <div class="sensor" id="speedSensor4">0</div> <span class="unit">mph</span>
+      </div>
+    </div>
+
+    <script src="js/index/bundle.js"></script>
+
+  </body>
+</html>
