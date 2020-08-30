@@ -74,7 +74,7 @@ const startAction = (currentClass, context) => {
         if (connectionGood) myInterval = setInterval(() => (currentClass.sendRequests(PATH)), valueRefresh);
         requestState = "START"
     } else {
-        // report error
+        
     }
 }
 
@@ -90,7 +90,7 @@ const stopAction = (context) => {
         clearInterval(myInterval);
         requestState = "STOP";
     } else {
-        // report error
+        
     }
 }
 
